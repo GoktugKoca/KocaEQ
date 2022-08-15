@@ -175,6 +175,22 @@ void KocaEQAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
     // You should use this method to store your parameters in the memory block.
     // You could do that either as raw data, or use the XML or ValueTree classes
     // as intermediaries to make it easy to save and load complex data.
+
+}
+
+
+
+juce::AudioProcessorValueTreeState::ParameterLayout KocaEQAudioProcessor::createParameterLayout()
+{
+	juce::AudioProcessorValueTreeState::ParameterLayout layout;
+
+	layout.add(std::make_unique<juce::AudioParameterFloat>("LowCut Freq",
+		"LowCut Freq",
+		juce::NormalisableRange<float>(20.f, 20000.f, 1.f, 1.f),
+		20.f));
+
+
+	return layout;
 }
 
 void KocaEQAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
