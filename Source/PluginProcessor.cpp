@@ -166,8 +166,9 @@ bool KocaEQAudioProcessor::hasEditor() const
 
 juce::AudioProcessorEditor* KocaEQAudioProcessor::createEditor()
 {
-    //return new KocaEQAudioProcessorEditor (*this);
+    // return new KocaEQAudioProcessorEditor (*this);
 
+    // to test stuff:
     return new juce::GenericAudioProcessorEditor(*this);
 }
 
